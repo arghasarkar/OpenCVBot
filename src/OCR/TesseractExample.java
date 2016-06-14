@@ -13,7 +13,7 @@ public class TesseractExample {
     private static String FILTER_DIR = dir.getOcrDir("filter");
 
     public static void main(String[] args) {
-        String filename_818 = FILTER_DIR + "filter_pic.png";
+        String filename_818 = FILTER_DIR + "filter_821.png";
         File imageFile = new File(filename_818);
 
         ITesseract instance = new Tesseract();  // JNA Interface Mapping

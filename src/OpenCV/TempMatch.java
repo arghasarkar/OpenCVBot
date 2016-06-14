@@ -14,7 +14,7 @@ public class TempMatch {
     private static final Directory dir = new Directory();
 
     private static final String NEEDLE_FILE_NAME = "needle.png";
-    private static final String HAYSTACK_FILE_NAME = "full_868.png";
+    private static final String HAYSTACK_FILE_NAME = "full_708.png";
     private static final String OUTPUT_FILE = new FileNameFormat().getPrayerStringFromFileName(HAYSTACK_FILE_NAME) + ".png";
 
     private static final String RESOURCES_DIR = dir.getResourcesDir();

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TesseractProject>
+  <TessImages>
+    <Images>483.tif</Images>
+    <Images>555.tif</Images>
+    <Images>717.tif</Images>
+    <Images>767.tif</Images>
+    <Images>821.tif</Images>
+    <Images>958.tif</Images>
+    <Images>bw_483.tif</Images>
+  </TessImages>
+  <TessBoxFiles />
+  <FinalTessdata />
+</TesseractProject>

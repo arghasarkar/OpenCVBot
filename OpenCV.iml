@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/opencv/build/java/opencv-2413.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://C:/opencv/build/java/opencv-2413.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/Tess4J/dist/tess4j-3.2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/commons-beanutils-1.9.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/lept4j-1.2.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/hamcrest-core-1.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/jna-4.1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/xmlgraphics-commons-1.5.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/log4j-over-slf4j-1.7.21.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/logback-core-1.1.7.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/commons-io-2.5.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/junit-4.12.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/itext-2.1.7.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/slf4j-api-1.7.21.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/ghost4j-1.0.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/rococoa-core-0.5.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/jul-to-slf4j-1.7.21.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/logback-classic-1.1.7.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/jai-imageio-core-1.3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/log4j-1.2.17.jar!/" />
+          <root url="jar://$MODULE_DIR$/Tess4J/lib/commons-logging-1.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <NATIVE>
+          <root url="file://$MODULE_DIR$/Tess4J/lib/win32-x86-64" />
+          <root url="file://$MODULE_DIR$/Tess4J/lib/win32-x86-64" />
+        </NATIVE>
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/Tess4J/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/Tess4J/lib" recursive="false" />
+      </library>
+    </orderEntry>
+  </component>
+</module>

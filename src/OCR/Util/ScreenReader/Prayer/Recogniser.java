@@ -1,15 +1,12 @@
-package OCR.Utils.ScreenReader.Prayer;
+package OCR.Util.ScreenReader.Prayer;
 
 import java.io.File;
-
 import Helper.Directory;
 import net.sourceforge.tess4j.*;
 
 public class Recogniser {
 
     private Directory dir = new Directory();
-
-    private String ROOT_DIR = dir.getRootDir();
     private String FILTER_DIR = dir.getOcrDir("filter");
     private String FILE_NAME = "";
 

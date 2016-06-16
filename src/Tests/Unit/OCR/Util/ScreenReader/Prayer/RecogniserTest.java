@@ -1,10 +1,10 @@
-package Tests.Unit.OCR.Utils.ScreenReader.Prayer;
+package Tests.Unit.OCR.Util.ScreenReader.Prayer;
 
 import Helper.Directory;
 import Helper.FileNameFormat;
 import java.io.File;
 
-import OCR.Utils.ScreenReader.Prayer.Recogniser;
+import OCR.Util.ScreenReader.Prayer.Recogniser;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

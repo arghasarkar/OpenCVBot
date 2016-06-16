@@ -1,4 +1,4 @@
-package OCR.Utils.ScreenReader.Prayer;
+package OCR.Util.ScreenReader.Prayer;
 
 public class Parser {
 

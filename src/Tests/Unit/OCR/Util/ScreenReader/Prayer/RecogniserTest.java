@@ -15,6 +15,7 @@ public class RecogniserTest {
     private static Directory dir = new Directory();
 
     private static String FILTER_DIR = dir.getOcrDir("filter");
+    private static String FILTER_PRAYER = "filter_prayer.png";
 
     @Test
     public void test_to_see_if_the_prayer_string_is_being_extracted_correctly_from_the_filtered_images() throws Exception {
@@ -27,14 +28,18 @@ public class RecogniserTest {
             recog.setFilename(testImages[i].getName());
             FileNameFormat fnf = new FileNameFormat();
 
-            int expectedPrayerValue = fnf.getPrayerValueFromFileName(testImages[i].getName());
-            // Adding an exception to a known
-            if (expectedPrayerValue == 555) {
-                expectedPrayerValue = 0;
+            // LEAVING OUT THE PRODUCTION FILE
+            if (!testImages[i].getName().equals(FILTER_PRAYER)) {
+                int expectedPrayerValue = fnf.getPrayerValueFromFileName(testImages[i].getName());
+                // Adding an exception to a known
+                if (expectedPrayerValue == 555) {
+                    expectedPrayerValue = 0;
+                }
+
+                int actualPrayerValue = getPrayValueFromPrayerString(recog.getPrayerString());
+                assertEquals(expectedPrayerValue, actualPrayerValue);
             }
 
-            int actualPrayerValue = getPrayValueFromPrayerString(recog.getPrayerString());
-            assertEquals(expectedPrayerValue, actualPrayerValue);
         }
     }
 

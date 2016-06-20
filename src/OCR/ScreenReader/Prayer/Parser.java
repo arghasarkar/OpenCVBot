@@ -1,9 +1,12 @@
-package OCR.Util.ScreenReader.Prayer;
+package OCR.ScreenReader.Prayer;
 
 public class Parser {
 
     private String prayerStr = "";
-    private int maxPrayerPts = 990;
+    // Over all highest prayer points a player can have
+    private final int MAX_PRAYER_POINTS = 990;
+    // Maximum prayer points the current player can have. EG Prayer level 30 can have a max of 300 prayer points.
+    private int maxPrayerPts = MAX_PRAYER_POINTS;
     private int currentPrayerPts = 0;
 
     public Parser(String prayerStr) {
@@ -26,11 +29,16 @@ public class Parser {
     }
 
     private void Parse() {
-        String[] prayerVals = prayerStr.split("/");
-        CharacterMap cm = new CharacterMap(prayerVals[0]);
-        currentPrayerPts = cm.map();
+        try {
+            String[] prayerVals = prayerStr.split("/");
+            CharacterMap cm = new CharacterMap(prayerVals[0]);
+            currentPrayerPts = cm.map();
 
-        maxPrayerPts = cm.map(prayerVals[1]);
+            maxPrayerPts = cm.map(prayerVals[1]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            currentPrayerPts = 0;
+            maxPrayerPts = MAX_PRAYER_POINTS;
+        }
     }
 
     class CharacterMap {

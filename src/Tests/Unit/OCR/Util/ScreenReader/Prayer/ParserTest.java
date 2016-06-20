@@ -1,6 +1,6 @@
 package Tests.Unit.OCR.Util.ScreenReader.Prayer;
 
-import OCR.Util.ScreenReader.Prayer.Parser;
+import OCR.ScreenReader.Prayer.Parser;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

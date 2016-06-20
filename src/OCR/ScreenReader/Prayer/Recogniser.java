@@ -1,4 +1,4 @@
-package OCR.Util.ScreenReader.Prayer;
+package OCR.ScreenReader.Prayer;
 
 import java.io.File;
 import Helper.Directory;
@@ -8,7 +8,7 @@ public class Recogniser {
 
     private Directory dir = new Directory();
     private String FILTER_DIR = dir.getOcrDir("filter");
-    private String FILE_NAME = "";
+    private String FILE_NAME = "filter_prayer.png";
 
     private String PRAYER_STRING = "";
 

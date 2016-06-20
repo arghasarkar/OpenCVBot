@@ -1,17 +1,16 @@
 package Tests.Integration.OpenCV.TemplateMatching;
 
 import Helper.Directory;
-import OpenCV.TemplateMatching.Prayer;
+import OpenCV.TemplateMatching.Prayer_TM;
 import org.junit.Test;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.highgui.Highgui;
-import org.opencv.imgproc.Imgproc;
 
 import java.io.File;
 import static org.junit.Assert.*;
 
-public class PrayerTest {
+public class PrayerTMTest {
 
     private Directory dir = new Directory();
     private String FILTER_DIR = dir.getOcrDir("filter");
@@ -22,8 +21,8 @@ public class PrayerTest {
         File f = new File(FILTER_DIR + FILTER_PRAYER);
         boolean expectedFileStatus = true;
 
-        Prayer prayer = new Prayer();
-        prayer.filterImage();
+        Prayer_TM prayerTM = new Prayer_TM();
+        prayerTM.filterImage();
         boolean actualFileStatus = f.exists();
 
         assertEquals(expectedFileStatus, actualFileStatus);

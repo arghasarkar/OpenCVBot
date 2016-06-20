@@ -1,8 +1,8 @@
-package Tests.Unit.OpenCV.Util.ScreenCapture;
+package Tests.Unit.Util.ScreenCapture;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import OpenCV.Util.ScreenCapture.ScreenShot;
+import Util.ScreenCapture.ScreenShot;
 
 public class ScreenShotTest {
     @Test

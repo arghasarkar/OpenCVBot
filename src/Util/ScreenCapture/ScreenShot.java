@@ -1,4 +1,4 @@
-package OpenCV.Util.ScreenCapture;
+package Util.ScreenCapture;
 
 import Helper.Directory;
 

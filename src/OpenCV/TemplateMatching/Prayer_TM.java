@@ -11,7 +11,7 @@ import org.opencv.imgproc.Imgproc;
 
 import java.io.File;
 
-public class Prayer {
+public class Prayer_TM {
 
     private Directory dir = new Directory();
     private String RESOURCES_DIR = dir.getResourcesDir("full");

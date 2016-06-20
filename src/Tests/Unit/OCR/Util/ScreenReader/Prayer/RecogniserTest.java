@@ -4,11 +4,10 @@ import Helper.Directory;
 import Helper.FileNameFormat;
 import java.io.File;
 
-import OCR.Util.ScreenReader.Prayer.Recogniser;
+import OCR.ScreenReader.Prayer.Recogniser;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
 
 public class RecogniserTest {
 

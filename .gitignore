@@ -2,3 +2,6 @@
 *.class
 .out/*
 screenshot.png
+filter_prayer.png
+out/production/OpenCV/OCR/TrainImages/filter/filter_prayer.png
+src/OCR/TrainImages/filter/filter_prayer.png

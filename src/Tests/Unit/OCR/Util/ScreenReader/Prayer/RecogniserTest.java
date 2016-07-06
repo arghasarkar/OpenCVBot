@@ -27,8 +27,8 @@ public class RecogniserTest {
             recog.setFilename(testImages[i].getName());
             FileNameFormat fnf = new FileNameFormat();
 
-            // LEAVING OUT THE PRODUCTION FILE
-            if (!testImages[i].getName().equals(FILTER_PRAYER)) {
+            // LEAVING OUT THE PRODUCTION FILE AND DIRECTORIES
+            if (!testImages[i].getName().equals(FILTER_PRAYER) && testImages[i].getName().contains("\\.")) {
                 int expectedPrayerValue = fnf.getPrayerValueFromFileName(testImages[i].getName());
                 // Adding an exception to a known
                 if (expectedPrayerValue == 555) {

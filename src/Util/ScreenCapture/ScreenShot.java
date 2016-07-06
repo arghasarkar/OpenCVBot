@@ -17,6 +17,11 @@ public class ScreenShot {
     private String IMAGE_FORMAT = "png";
     private String[] ACCEPTED_FORMATS  = { "jpg", "tiff", "png", "tiff" };
 
+    private int X = 0;
+    private int Y = 0;
+    private int WIDTH = 0;
+    private int HEIGHT = 0;
+
     public ScreenShot() {
         setImageFormat(IMAGE_FORMAT);
     }
@@ -34,7 +39,20 @@ public class ScreenShot {
         } catch (AWTException e) {
         } catch (IOException e) {
         }
-        return true;
+        return false;
+    }
+
+    public boolean captureScreen(int x, int y, int width, int height) {
+        try {
+            Robot robot = new Robot();
+            Rectangle screenRectangle = new Rectangle(x, y, width, height);
+            BufferedImage screenShot = robot.createScreenCapture(screenRectangle);
+            ImageIO.write(screenShot, IMAGE_FORMAT, new File(RESOURCES_DIR + FILE_NAME));
+            return true;
+        } catch (AWTException e) {
+        } catch (IOException e) {
+        }
+        return false;
     }
 
     public int inArray(String[] haystack, String needle) {
@@ -62,5 +80,13 @@ public class ScreenShot {
 
     public String getFileName() {
         return FILE_NAME;
+    }
+
+    public void setDirectory(String dirPath) {
+        this.RESOURCES_DIR = dirPath;
+    }
+
+    public String getDirectory() {
+        return RESOURCES_DIR;
     }
 }

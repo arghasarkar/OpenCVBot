@@ -17,6 +17,9 @@ public class Directory {
         return getResourcesDir("");
     }
     public String getResourcesDir(String arg) {
+        if (arg.equals("fullDiv")) {
+            return getResourcesDir() + "full\\div\\";
+        }
         if (arg.equals("full")) {
             return getResourcesDir() + "full\\";
         }
@@ -27,6 +30,9 @@ public class Directory {
         return getOcrDir("");
     }
     public String getOcrDir(String arg) {
+        if (arg.equals("filterDiv")) {
+            return getOcrDir("train") + "filter\\div\\";
+        }
         if (arg.equals("filter")) {
             return getOcrDir("train") + "filter\\";
         }

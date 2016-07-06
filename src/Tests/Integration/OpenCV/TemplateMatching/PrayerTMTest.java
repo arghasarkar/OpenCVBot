@@ -1,7 +1,7 @@
 package Tests.Integration.OpenCV.TemplateMatching;
 
 import Helper.Directory;
-import OpenCV.TemplateMatching.Prayer_TM;
+import OpenCV.TemplateMatching.TemplateMatch;
 import org.junit.Test;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
@@ -21,7 +21,7 @@ public class PrayerTMTest {
         File f = new File(FILTER_DIR + FILTER_PRAYER);
         boolean expectedFileStatus = true;
 
-        Prayer_TM prayerTM = new Prayer_TM();
+        TemplateMatch prayerTM = new TemplateMatch();
         prayerTM.filterImage();
         boolean actualFileStatus = f.exists();
 

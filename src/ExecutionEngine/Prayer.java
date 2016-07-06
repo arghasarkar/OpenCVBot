@@ -2,7 +2,7 @@ package ExecutionEngine;
 
 import Util.Audio.Beep;
 import Util.ScreenCapture.ScreenShot;
-import OpenCV.TemplateMatching.Prayer_TM;
+import OpenCV.TemplateMatching.TemplateMatch;
 import OCR.ScreenReader.Prayer.Recogniser;
 import OCR.ScreenReader.Prayer.Parser;
 
@@ -34,7 +34,7 @@ public class Prayer {
             }
 
             // Performing template matching
-            Prayer_TM prayer = new Prayer_TM();
+            TemplateMatch prayer = new TemplateMatch();
             templateMatch = prayer.filterImage();
 
             if (!templateMatch) {

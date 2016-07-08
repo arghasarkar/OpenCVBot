@@ -3,26 +3,13 @@ package RoughWork.Surf;
 import Helper.Directory;
 
 import Util.ScreenCapture.ScreenShot;
-import org.opencv.core.Core;
-import org.opencv.core.CvType;
-import org.opencv.core.Mat;
-import org.opencv.core.MatOfDMatch;
-import org.opencv.core.MatOfInt;
-import org.opencv.core.MatOfKeyPoint;
-import org.opencv.core.MatOfRect;
-import org.opencv.core.Point;
-import org.opencv.core.Rect;
-import org.opencv.core.Scalar;
-import org.opencv.features2d.DMatch;
+import org.opencv.core.*;
 import org.opencv.features2d.DescriptorExtractor;
 import org.opencv.features2d.DescriptorMatcher;
 import org.opencv.features2d.FeatureDetector;
 import org.opencv.features2d.Features2d;
-import org.opencv.features2d.GenericDescriptorMatcher;
-import org.opencv.features2d.KeyPoint;
-import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
-import org.opencv.objdetect.CascadeClassifier;
+import org.opencv.imgcodecs.Imgcodecs;
 
 public class SurfExample {
 
@@ -49,8 +36,8 @@ public class SurfExample {
         ss.captureScreen();
 
         // Loading up the two raw images from the raw image files
-        Mat needleImage = Highgui.imread(NEEDLE_PATH);
-        Mat haystackImage = Highgui.imread(HAYSTACK_PATH);
+        Mat needleImage = Imgcodecs.imread(NEEDLE_PATH);
+        Mat haystackImage = Imgcodecs.imread(HAYSTACK_PATH);
 
         if (needleImage == null || haystackImage == null) {
             System.out.println("Can't read file");
@@ -97,7 +84,7 @@ public class SurfExample {
         Mat matchedImage = new Mat(needleImage.rows(), needleImage.cols()*2, needleImage.type());
         Features2d.drawMatches(needleImage, keyPointNeedle, haystackImage, keyPointHaystack, matches, matchedImage);
 
-        Highgui.imwrite(OUTPUT_PATH, matchedImage);
+        Imgcodecs.imwrite(OUTPUT_PATH, matchedImage);
     }
 
 }

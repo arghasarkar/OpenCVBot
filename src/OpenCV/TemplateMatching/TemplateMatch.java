@@ -2,13 +2,8 @@ package OpenCV.TemplateMatching;
 
 import Helper.Directory;
 import org.opencv.core.*;
-import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
-import org.opencv.core.*;
-import org.opencv.core.Core.MinMaxLocResult;
-import org.opencv.highgui.Highgui;
-import org.opencv.imgproc.Imgproc;
-
+import org.opencv.imgcodecs.Imgcodecs;
 import java.io.File;
 
 public class TemplateMatch {
@@ -42,8 +37,8 @@ public class TemplateMatch {
             }
 
             // Loading the images normally in their coloured formats
-            Mat screenshot = Highgui.imread(screenshotFile.getAbsolutePath());
-            Mat template = Highgui.imread(prayerIconFile.getAbsolutePath());
+            Mat screenshot = Imgcodecs.imread(screenshotFile.getAbsolutePath());
+            Mat template = Imgcodecs.imread(prayerIconFile.getAbsolutePath());
 
             // Create the result matrix
             int result_cols = screenshot.cols() - template.cols() + 1;
@@ -70,12 +65,12 @@ public class TemplateMatch {
             // The top right corner around the matched template in the screenshot
             Point topRight = new Point(matchLoc.x + template.cols(), matchLoc.y);
             // Rectangle around the prayer sign (The template image)
-            Core.rectangle(screenshot, matchLoc, new Point(
+            Imgproc.rectangle(screenshot, matchLoc, new Point(
                             matchLoc.x + template.cols(), matchLoc.y + template.rows()),
                     new Scalar(0, 255, 0)
             );
             // Rectangle around the prayer points value
-            Core.rectangle(screenshot, topRight, new Point (
+            Imgproc.rectangle(screenshot, topRight, new Point (
                             matchLoc.x + template.cols() + PRAYER_WIDTH, matchLoc.y + PRAYER_HEIGHT),
                     new Scalar(255, 255, 255)
             );
@@ -94,7 +89,7 @@ public class TemplateMatch {
             Imgproc.threshold(croppedImage, croppedImage, 120, 255, 0);
 
             // Saving the processed image to a file on disk
-            Highgui.imwrite(FILTER_DIR + FILTER_PRAYER, croppedImage);
+            Imgcodecs.imwrite(FILTER_DIR + FILTER_PRAYER, croppedImage);
 
             return true;
         } catch (Exception ex) {  ex.printStackTrace(System.err);}

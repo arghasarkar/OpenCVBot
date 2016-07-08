@@ -2,8 +2,8 @@ package RoughWork.TemplateMatching;
 
 import org.opencv.core.*;
 import org.opencv.core.Core.MinMaxLocResult;
-import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
+import org.opencv.imgcodecs.Imgcodecs;
 import java.io.File;
 
 import Helper.FileNameFormat;
@@ -44,8 +44,8 @@ public class TempMatch {
         //Mat image = Highgui.imread(haystack.getAbsolutePath(), Highgui.IMREAD_GRAYSCALE);
         //Mat template = Highgui.imread(needle.getAbsolutePath(), Highgui.IMREAD_GRAYSCALE);
         // Loading the images normally in their coloured formats
-        Mat image = Highgui.imread(haystack.getAbsolutePath());
-        Mat template = Highgui.imread(needle.getAbsolutePath());
+        Mat image = Imgcodecs.imread(haystack.getAbsolutePath());
+        Mat template = Imgcodecs.imread(needle.getAbsolutePath());
 
         // / Create the result matrix
         int result_cols = image.cols() - template.cols() + 1;
@@ -73,12 +73,12 @@ public class TempMatch {
         // / Show me what you got
         Point topRight = new Point(matchLoc.x + template.cols(), matchLoc.y);
         // Rectangle around the prayer sign (The template image)
-        Core.rectangle(image, matchLoc, new Point(
+        Imgproc.rectangle(image, matchLoc, new Point(
                 matchLoc.x + template.cols(), matchLoc.y + template.rows()),
                 new Scalar(0, 255, 0)
         );
         // Rectangle around the prayer points value
-        Core.rectangle(image, topRight, new Point (
+        Imgproc.rectangle(image, topRight, new Point (
                 matchLoc.x + template.cols() + PRAYER_WIDTH, matchLoc.y + PRAYER_HEIGHT),
                 new Scalar(255, 255, 255)
         );
@@ -101,7 +101,7 @@ public class TempMatch {
         Imgproc.threshold(largerImage, largerImage, 120, 255, 0);
 
         // Saving the cropped image
-        Highgui.imwrite(ROOT_DIR + OUTPUT_DIR + "filter_" + OUTPUT_FILE, filteredImage);
+        Imgcodecs.imwrite(ROOT_DIR + OUTPUT_DIR + "filter_" + OUTPUT_FILE, filteredImage);
 
         // Save the visualized detection.
         System.out.println("Writing "+ OUTPUT_FILE);

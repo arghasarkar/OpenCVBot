@@ -5,8 +5,7 @@ import OpenCV.TemplateMatching.TemplateMatch;
 import org.junit.Test;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
-import org.opencv.highgui.Highgui;
-
+import org.opencv.imgcodecs.Imgcodecs;
 import java.io.File;
 import static org.junit.Assert.*;
 
@@ -38,7 +37,7 @@ public class PrayerTMTest {
 
         // Loading the OpenCV library.
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        Mat file = Highgui.imread(f.getAbsolutePath());
+        Mat file = Imgcodecs.imread(f.getAbsolutePath());
 
         int actualHeight = file.rows();
         int actualWidth = file.cols();

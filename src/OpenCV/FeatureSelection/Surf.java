@@ -40,8 +40,8 @@ public class Surf {
         Imgproc.cvtColor(haystackImage, haystackGray, Imgproc.COLOR_BGRA2GRAY);
         Core.normalize(haystackGray, haystackGray, 0, 255, Core.NORM_MINMAX);
 
-        FeatureDetector featureDetector = FeatureDetector.create(FeatureDetector.SURF);
-        DescriptorExtractor descriptorExtractor = DescriptorExtractor.create(DescriptorExtractor.SURF);
+        FeatureDetector featureDetector = FeatureDetector.create(FeatureDetector.FAST);
+        DescriptorExtractor descriptorExtractor = DescriptorExtractor.create(DescriptorExtractor.BRISK);
 
         MatOfKeyPoint keyPointNeedle = new MatOfKeyPoint();
         featureDetector.detect(needleGray, keyPointNeedle);

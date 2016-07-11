@@ -11,7 +11,7 @@ public class SurfLoop {
     private static final Directory dir = new Directory();
     private static final String RESOURCED_DIR = dir.getResourcesDir("fullDiv");
 
-    private static final String NEEDLE_FILE_NAME = "div_vib_wisp_3.png";
+    private static final String NEEDLE_FILE_NAME = "div_vib_wisp_2.png";
     private static final String NEEDLE_PATH = RESOURCED_DIR + NEEDLE_FILE_NAME;
     private static final String HAYSTACK_FILE_NAME = "screenshot_div.png";
     private static final String HAYSTACK_PATH = RESOURCED_DIR + HAYSTACK_FILE_NAME;

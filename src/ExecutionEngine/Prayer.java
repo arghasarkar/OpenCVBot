@@ -56,6 +56,9 @@ public class Prayer {
             if (prayerPoints < 450) {
                 beeper.run();
             }
+
+            // Print out the prayer points
+            System.out.println("Prayer points: " + prayerPoints);
         }
     }
 }

@@ -3,11 +3,13 @@ package Helper;
 public class Directory {
 
     private final String ROOT_DIR = System.getProperty("user.dir") + "\\";
+    private final String SOURCE_DIR = ROOT_DIR + "src\\";
 
-    private final String OCR_DIR = ROOT_DIR + "src\\OCR\\";
-    private final String OPENCV_DIR = ROOT_DIR + "src\\OpenCV\\";
+    private final String OCR_DIR = SOURCE_DIR + "OCR\\";
+    private final String OPENCV_DIR = SOURCE_DIR + "OpenCV\\";
+    private final String TEST_DIR = SOURCE_DIR + "Tests\\";
 
-    private final String RESOURCES_DIR = ROOT_DIR + "src\\resources\\";
+    private final String RESOURCES_DIR = SOURCE_DIR + "resources\\";
 
     public String getRootDir() {
         return ROOT_DIR;
@@ -17,6 +19,9 @@ public class Directory {
         return getResourcesDir("");
     }
     public String getResourcesDir(String arg) {
+        if (arg.equals("fullMd")) {
+            return getResourcesDir() + "full\\motionDetection\\";
+        }
         if (arg.equals("fullDiv")) {
             return getResourcesDir() + "full\\div\\";
         }
@@ -42,6 +47,12 @@ public class Directory {
         if (arg.equals("util")) {
             return getOcrDir() + "Utils\\";
         }
+        if (arg.equals("testUnit")) {
+            return TEST_DIR + "Unit\\OCR\\";
+        }
+        if (arg.equals("testInt")) {
+            return TEST_DIR + "Integration\\OCR\\";
+        }
         return OCR_DIR;
     }
 
@@ -49,6 +60,12 @@ public class Directory {
         return getOcrDir("");
     }
     public String getOpencvDir(String arg) {
+        if (arg.equals("testUnit")) {
+            return TEST_DIR + "Unit\\OpenCV\\";
+        }
+        if (arg.equals("testInt")) {
+            return TEST_DIR + "Integration\\OpenCV\\";
+        }
         return OPENCV_DIR;
     }
 

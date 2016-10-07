@@ -3,6 +3,7 @@ package Tests.Unit.Util.ScreenCapture;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import Util.ScreenCapture.ScreenShot;
+import org.opencv.core.Mat;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -110,4 +111,44 @@ public class ScreenShotTest {
             fail();
         }
     }
+
+    @Test
+    public void test_to_see_if_captureScreenBi_is_returning_a_valid_buffered_image_containing_a_valid_screenshot() {
+        ScreenShot ss = new ScreenShot();
+        BufferedImage expectedScreenshot = ss.captureScreenBi();
+        if (expectedScreenshot == null) {
+            fail();
+        }
+    }
+
+    @Test
+    public void test_to_see_if_captureScreenMat_is_returning_a_valid_Mat_containing_screenshot_data() {
+        ScreenShot ss = new ScreenShot();
+        Mat screenshotMat = ss.captureScreenMat();
+        if (screenshotMat == null) {
+            fail();
+        }
+    }
+
+    @Test
+    public void test_to_see_if_captureScreenMat_is_returning_a_valid_Mat_type_and_has_the_correct_resolution() {
+        final int HEIGHT = 800;
+        final int WIDTH = 1500;
+        final int X_BUFFER = 20;
+        final int Y_BUFFER = 50;
+
+        ScreenShot ss = new ScreenShot();
+        Mat screenshotMat = ss.captureScreenMat(X_BUFFER, Y_BUFFER, WIDTH, HEIGHT);
+        if (screenshotMat == null) {
+            fail();
+        } else {
+            int ACTUAL_HEIGHT = screenshotMat.height();
+            int ACTUAL_WIDTH = screenshotMat.width();
+
+            assertEquals(WIDTH, ACTUAL_WIDTH);
+            assertEquals(HEIGHT, ACTUAL_HEIGHT);
+        }
+
+    }
+    
 }

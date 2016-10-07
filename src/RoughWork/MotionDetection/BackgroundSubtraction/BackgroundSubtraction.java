@@ -23,10 +23,10 @@ public class BackgroundSubtraction {
     private static Directory dir = new Directory();
     private static String RESOURCES_DIR = dir.getResourcesDir("fullMd");
 
-    private static String IMG_BACKGROUND_NAME = "md_3.png";
+    private static String IMG_BACKGROUND_NAME = "md_1.png";
     private static String IMG_BACKGROUND = RESOURCES_DIR + IMG_BACKGROUND_NAME;
 
-    private static String IMG_FRAME_NAME = "md_4.png";
+    private static String IMG_FRAME_NAME = "md_3.png";
     private static String IMG_FRAME = RESOURCES_DIR + IMG_FRAME_NAME;
 
     private static String IMG_OUTPUT_NAME = "md_output.png";

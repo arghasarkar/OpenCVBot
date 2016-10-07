@@ -1,7 +1,13 @@
 .idea/*
 *.class
 .out/*
+out/*
+out/production/*
 screenshot.png
 filter_prayer.png
+screenshot_cropped_test.png
+*\screenshot_cropped_test.png
+/src/resources/full/screenshot_cropped_test.png
+output.png
 out/production/OpenCV/OCR/TrainImages/filter/filter_prayer.png
 src/OCR/TrainImages/filter/filter_prayer.png

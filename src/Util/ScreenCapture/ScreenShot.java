@@ -1,10 +1,14 @@
 package Util.ScreenCapture;
 
 import Helper.Directory;
+import org.opencv.core.Core;
+import org.opencv.core.CvType;
+import org.opencv.core.Mat;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
 import java.io.File;
 import java.io.IOException;
 
@@ -53,6 +57,57 @@ public class ScreenShot {
         } catch (IOException e) {
         }
         return false;
+    }
+
+    public BufferedImage captureScreenBi() {
+        try {
+            Robot robot = new Robot();
+            Rectangle screenRectangle = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+            BufferedImage screenShot = robot.createScreenCapture(screenRectangle);
+
+            return screenShot;
+        } catch (AWTException e) {
+        }
+
+        return null;
+    }
+
+    public Mat captureScreenMat() {
+        try {
+            System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+
+            Robot robot = new Robot();
+            Rectangle screenRectangle = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+            BufferedImage screenShot = new BufferedImage(screenRectangle.height, screenRectangle.width, BufferedImage.TYPE_3BYTE_BGR);
+            screenShot.setData(robot.createScreenCapture(screenRectangle).getData());
+
+            return bufferedImageToMat(screenShot);
+        } catch (AWTException e) { }
+
+        return null;
+    }
+
+    public Mat captureScreenMat(int x, int y, int width, int height) {
+        try {
+            System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+            
+            Robot robot = new Robot();
+            Rectangle screenRectangle = new Rectangle(x, y, width, height);
+            BufferedImage screenShot = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
+            screenShot.setData(robot.createScreenCapture(screenRectangle).getData());
+
+            return bufferedImageToMat(screenShot);
+        } catch (AWTException e) { }
+        return null;
+    }
+
+    private Mat bufferedImageToMat(BufferedImage bi) {
+        Mat imageMat = new Mat(bi.getHeight(), bi.getWidth(), CvType.CV_8UC3);
+
+        byte[] pixelData = ((DataBufferByte) bi.getRaster().getDataBuffer()).getData();
+
+        imageMat.put(0, 0, pixelData);
+        return imageMat;
     }
 
     public int inArray(String[] haystack, String needle) {

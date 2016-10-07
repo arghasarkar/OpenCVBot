@@ -45,7 +45,7 @@ public class Prayer {
             Recogniser recogniser = new Recogniser();
             String rawPrayerStr = recogniser.getPrayerString();
             if (rawPrayerStr == null || rawPrayerStr.length() < 1) {
-                rawPrayerStr = "0/960";
+                rawPrayerStr = "0/970";
             }
 
             // Using the parser to extract the prayer level from the raw prayer string.
@@ -53,7 +53,7 @@ public class Prayer {
             int prayerPoints = parser.getPrayerPts();
 
             // Actioner: What to do after learning the prayer points
-            if (prayerPoints < 450) {
+            if (prayerPoints < 900) {
                 beeper.run();
             }
         }

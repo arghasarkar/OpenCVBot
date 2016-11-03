@@ -3,13 +3,12 @@ package OpenCV.BackgroundSubtraction;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.highgui.Highgui;
-import org.opencv.video.BackgroundSubtractor;
 import org.opencv.video.BackgroundSubtractorMOG;
 import org.opencv.video.BackgroundSubtractorMOG2;
 
 import java.io.File;
 
-public class BackgroundSubtraction {
+public class BackgroundSubtractor {
 
     private Mat BACKGROUND = null;
     private Mat CURRENT = null;
@@ -20,7 +19,7 @@ public class BackgroundSubtraction {
 
     private boolean INITIALISED = false;
 
-    public BackgroundSubtraction(String backgroundPath, String currentPath) {
+    public BackgroundSubtractor(String backgroundPath, String currentPath) {
         // Loading the opencv library
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 
@@ -40,7 +39,7 @@ public class BackgroundSubtraction {
         INITIALISED = true;
     }
 
-    public BackgroundSubtraction(Mat backgroundFrame, Mat currentFrame) {
+    public BackgroundSubtractor(Mat backgroundFrame, Mat currentFrame) {
         // Loading the opencv library
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 
@@ -71,7 +70,7 @@ public class BackgroundSubtraction {
         }
 
         // Creating background subtractor object
-        BackgroundSubtractor pMOG = null;
+        org.opencv.video.BackgroundSubtractor pMOG = null;
 
         algorithm = algorithm.toLowerCase();
 

@@ -11,3 +11,4 @@ screenshot_cropped_test.png
 output.png
 out/production/OpenCV/OCR/TrainImages/filter/filter_prayer.png
 src/OCR/TrainImages/filter/filter_prayer.png
+*.png

@@ -9,7 +9,7 @@ public class BackgroundSubtraction {
 
     public static void main(String[] args) {
 
-        long SLEEP = 5000;
+        long SLEEP = 1000;
         String OUTPUT_PATH = "C:\\Users\\ArghaWin10\\Desktop\\output.png";
 
         // Loading the opencv library
@@ -26,16 +26,24 @@ public class BackgroundSubtraction {
 
         Mat ss1, ss2, output;
 
+        int counter = 0;
+
         try {
-            ss1 = ss.captureScreenMat();
+            while (counter < 1000) {
+                ss1 = ss.captureScreenMat();
 
-            Thread.sleep(SLEEP);
+                Thread.sleep(SLEEP);
 
-            ss2 = ss.captureScreenMat();
+                ss2 = ss.captureScreenMat();
 
-            BackgroundSubtractor bgrSub = new BackgroundSubtractor(ss1, ss2);
+                BackgroundSubtractor bgrSub = new BackgroundSubtractor(ss1, ss2);
 
-            bgrSub.saveFgMaskToDisk(OUTPUT_PATH);
+                bgrSub.saveFgMaskToDisk(OUTPUT_PATH);
+
+                
+                System.out.println("counter: " + counter);
+                counter++;
+            }
 
         } catch (Exception ex) {
             ex.printStackTrace(System.err);

@@ -78,7 +78,7 @@ public class ScreenShot {
 
             Robot robot = new Robot();
             Rectangle screenRectangle = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
-            BufferedImage screenShot = new BufferedImage(screenRectangle.height, screenRectangle.width, BufferedImage.TYPE_3BYTE_BGR);
+            BufferedImage screenShot = new BufferedImage(screenRectangle.width, screenRectangle.height, BufferedImage.TYPE_3BYTE_BGR);
             screenShot.setData(robot.createScreenCapture(screenRectangle).getData());
 
             return bufferedImageToMat(screenShot);

@@ -59,9 +59,13 @@ public class BackgroundSubtractor {
     public boolean saveFgMaskToDisk(String OUTPUT_PATH) {
         if (INITIALISED) {
             Mat fgMask = processImages(BACKGROUND, CURRENT, ALGORITHM);
-            return Highgui.imwrite(OUTPUT_PATH, fgMask);
+            return saveMatToDisk(OUTPUT_PATH, fgMask);
         }
         return false;
+    }
+
+    public static boolean saveMatToDisk(String OUTPUT_PATH, Mat inputMat) {
+        return Highgui.imwrite(OUTPUT_PATH, inputMat);
     }
 
     private Mat processImages(Mat backgroundFrame, Mat currentFrame, String algorithm) {
